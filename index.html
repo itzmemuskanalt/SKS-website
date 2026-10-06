@@ -14,41 +14,42 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7f4;
+            font-family: Arial, sans-serif;
+            background: #f4f6f3;
             color: #222;
         }
 
         /* HEADER */
         header {
-            background: #ffffff;
-            border-bottom: 1px solid #ddd;
-            padding: 18px 6%;
+            background: white;
+            min-height: 85px;
+            padding: 15px 6%;
             display: flex;
             align-items: center;
             gap: 15px;
+            border-bottom: 1px solid #ddd;
         }
 
         .logo {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             object-fit: contain;
         }
 
-        .company-name h1 {
-            font-size: 25px;
+        .company h1 {
             color: #245c35;
+            font-size: 25px;
         }
 
-        .company-name p {
-            color: #666;
-            margin-top: 4px;
+        .company p {
+            color: #777;
             font-size: 14px;
+            margin-top: 4px;
         }
 
         /* HERO */
         .hero {
-            background: linear-gradient(135deg, #245c35, #4d8b50);
+            background: linear-gradient(135deg, #174b2b, #4f8d50);
             color: white;
             text-align: center;
             padding: 55px 20px;
@@ -60,83 +61,80 @@
         }
 
         .hero p {
-            font-size: 17px;
-            opacity: 0.95;
+            font-size: 16px;
+        }
+
+        /* MAIN */
+        .main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 30px 20px 60px;
         }
 
         /* SEARCH */
-        .search-section {
-            max-width: 1100px;
-            margin: 30px auto 15px;
-            padding: 0 20px;
-        }
-
-        #searchBox {
+        .search-box {
             width: 100%;
-            padding: 16px 20px;
+            padding: 17px 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
             font-size: 16px;
+            margin-bottom: 22px;
             outline: none;
+            background: white;
         }
 
-        #searchBox:focus {
-            border-color: #4d8b50;
+        .search-box:focus {
+            border-color: #357343;
         }
 
-        /* CATEGORY BUTTONS */
+        /* CATEGORIES */
         .categories {
-            max-width: 1100px;
-            margin: 15px auto 30px;
-            padding: 0 20px;
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
+            margin-bottom: 30px;
         }
 
-        .category-btn {
+        .category {
             padding: 10px 18px;
-            border: 1px solid #4d8b50;
+            border-radius: 25px;
+            border: 1px solid #357343;
             background: white;
             color: #245c35;
-            border-radius: 20px;
             cursor: pointer;
             font-size: 14px;
         }
 
-        .category-btn:hover,
-        .category-btn.active {
+        .category:hover,
+        .category.active {
             background: #245c35;
             color: white;
         }
 
-        /* PRODUCTS */
+        /* PRODUCT GRID */
         .products {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 20px 50px;
-
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 22px;
         }
 
-        .product-card {
+        /* PRODUCT CARD */
+        .product {
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            border: 1px solid #e2e2e2;
-            transition: 0.25s;
+            border: 1px solid #ddd;
+            transition: 0.2s;
         }
 
-        .product-card:hover {
+        .product:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
 
         .product-image {
             width: 100%;
-            height: 220px;
+            height: 230px;
             object-fit: contain;
             background: #fafafa;
             padding: 15px;
@@ -148,14 +146,14 @@
 
         .product-info h3 {
             color: #245c35;
-            margin-bottom: 10px;
             font-size: 19px;
+            margin-bottom: 12px;
         }
 
         .product-info p {
             font-size: 14px;
-            color: #555;
             line-height: 1.6;
+            color: #555;
             margin-bottom: 6px;
         }
 
@@ -166,18 +164,25 @@
 
         /* FOOTER */
         footer {
-            background: #1f2d22;
+            background: #1d2b21;
             color: white;
             text-align: center;
-            padding: 25px 15px;
+            padding: 25px;
             font-size: 14px;
         }
 
+        /* TABLET */
+        @media (max-width: 850px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         /* MOBILE */
-        @media (max-width: 600px) {
+        @media (max-width: 550px) {
 
             header {
-                padding: 15px 20px;
+                padding: 12px 18px;
             }
 
             .logo {
@@ -185,8 +190,8 @@
                 height: 50px;
             }
 
-            .company-name h1 {
-                font-size: 19px;
+            .company h1 {
+                font-size: 20px;
             }
 
             .hero {
@@ -204,15 +209,19 @@
     </style>
 </head>
 
+
 <body>
 
     <!-- HEADER -->
     <header>
 
-        <!-- Apna logo yahan images/sks-logo.png naam se upload karna -->
-        <img src="images/sks-logo.png" class="logo" alt="SKS Agro Engineers Logo">
+        <img
+            src="images/sks-logo.png"
+            class="logo"
+            alt="SKS Agro Engineers Logo"
+        >
 
-        <div class="company-name">
+        <div class="company">
             <h1>SKS Agro Engineers</h1>
             <p>Agro Engineering Products</p>
         </div>
@@ -222,10 +231,264 @@
 
     <!-- HERO -->
     <section class="hero">
+
         <h2>Product Catalogue</h2>
-        <p>Explore our agricultural machinery, components and spare parts.</p>
+
+        <p>
+            Explore our agricultural machinery, components and spare parts.
+        </p>
+
     </section>
 
 
-    <!-- SEARCH -->
-    <section class="search-section
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- SEARCH -->
+        <input
+            type="text"
+            id="search"
+            class="search-box"
+            placeholder="🔍 Search product, part number, material..."
+            onkeyup="searchProducts()"
+        >
+
+
+        <!-- CATEGORIES -->
+        <div class="categories">
+
+            <button
+                class="category active"
+                onclick="filterProducts('all', this)">
+                All Products
+            </button>
+
+            <button
+                class="category"
+                onclick="filterProducts('implement', this)">
+                Implements
+            </button>
+
+            <button
+                class="category"
+                onclick="filterProducts('spare', this)">
+                Spare Parts
+            </button>
+
+            <button
+                class="category"
+                onclick="filterProducts('component', this)">
+                Components
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCTS -->
+        <div class="products" id="products">
+
+
+            <!-- PRODUCT 1 -->
+            <div class="product" data-category="implement">
+
+                <img
+                    src="images/product-1.jpg"
+                    class="product-image"
+                    alt="Agricultural Product"
+                >
+
+                <div class="product-info">
+
+                    <h3>Product Name 1</h3>
+
+                    <p>
+                        <span class="label">Part Number:</span>
+                        SKS-001
+                    </p>
+
+                    <p>
+                        <span class="label">Size:</span>
+                        100 mm
+                    </p>
+
+                    <p>
+                        <span class="label">Material:</span>
+                        Mild Steel
+                    </p>
+
+                    <p>
+                        <span class="label">Description:</span>
+                        Agricultural equipment component suitable for farming applications.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+            <div class="product" data-category="spare">
+
+                <img
+                    src="images/product-2.jpg"
+                    class="product-image"
+                    alt="Agricultural Spare Part"
+                >
+
+                <div class="product-info">
+
+                    <h3>Product Name 2</h3>
+
+                    <p>
+                        <span class="label">Part Number:</span>
+                        SKS-002
+                    </p>
+
+                    <p>
+                        <span class="label">Size:</span>
+                        150 mm
+                    </p>
+
+                    <p>
+                        <span class="label">Material:</span>
+                        Steel
+                    </p>
+
+                    <p>
+                        <span class="label">Description:</span>
+                        Durable spare part designed for agricultural machinery.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+            <div class="product" data-category="component">
+
+                <img
+                    src="images/product-3.jpg"
+                    class="product-image"
+                    alt="Agricultural Component"
+                >
+
+                <div class="product-info">
+
+                    <h3>Product Name 3</h3>
+
+                    <p>
+                        <span class="label">Part Number:</span>
+                        SKS-003
+                    </p>
+
+                    <p>
+                        <span class="label">Size:</span>
+                        200 mm
+                    </p>
+
+                    <p>
+                        <span class="label">Material:</span>
+                        Stainless Steel
+                    </p>
+
+                    <p>
+                        <span class="label">Description:</span>
+                        High-quality component for agricultural equipment.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        © 2026 SKS Agro Engineers. All Rights Reserved.
+
+    </footer>
+
+
+    <script>
+
+        /* SEARCH */
+
+        function searchProducts() {
+
+            let searchText =
+                document
+                .getElementById("search")
+                .value
+                .toLowerCase();
+
+            let products =
+                document.querySelectorAll(".product");
+
+            products.forEach(function(product) {
+
+                let productText =
+                    product.innerText.toLowerCase();
+
+                if (productText.includes(searchText)) {
+
+                    product.style.display = "block";
+
+                } else {
+
+                    product.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+
+        /* CATEGORY FILTER */
+
+        function filterProducts(category, button) {
+
+            let products =
+                document.querySelectorAll(".product");
+
+            let buttons =
+                document.querySelectorAll(".category");
+
+            buttons.forEach(function(btn) {
+
+                btn.classList.remove("active");
+
+            });
+
+            button.classList.add("active");
+
+
+            products.forEach(function(product) {
+
+                if (
+                    category === "all" ||
+                    product.dataset.category === category
+                ) {
+
+                    product.style.display = "block";
+
+                } else {
+
+                    product.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
